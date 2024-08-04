@@ -1,6 +1,15 @@
-export default function ButtonConnect() {
+import React from "react";
+
+interface ButtonConnectProps {
+  onConnect: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+const ButtonConnect: React.FC<ButtonConnectProps> = ({ onConnect }) => {
     return (
-        <button className="group relative inline-flex items-center justify-center h-[48px] rounded-full bg-gray-800 border border-gray-700 text-white font-medium py-1 px-6 overflow-hidden">
+        <button
+            onClick={onConnect}
+            className="group relative inline-flex items-center justify-center h-[48px] rounded-full bg-gray-800 border border-gray-700 text-white font-medium py-1 px-6 overflow-hidden"
+        >
             <div className="relative flex items-center justify-center h-full px-6 text-gray-50 transition-transform duration-500 group-hover:translate-y-[-150%]">
                 Connect Wallet
             </div>
@@ -11,3 +20,5 @@ export default function ButtonConnect() {
         </button>
     );
 }
+
+export default ButtonConnect;
